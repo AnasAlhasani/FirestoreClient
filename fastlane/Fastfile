@@ -1,0 +1,55 @@
+default_platform(:ios)
+
+platform :ios do
+
+  before_all do
+    @podspec_name = "FirestoreClient.podspec"
+  end
+
+  desc "Clean the derived data"
+  desc "Installs cocoapods"
+  desc "Run tests"
+  lane :test do |options|
+    clear_derived_data
+    cocoapods(try_repo_update_on_error: true)
+    ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "120"
+    scan(clean: true, code_coverage: true)
+  end
+
+  desc "Release a new version with a patch bump_type"
+  lane :patch do
+    release("patch")
+  end
+
+  desc "Release a new version with a minor bump_type"
+  lane :minor do
+    release("minor")
+  end
+
+  desc "Release a new version with a major bump_type"
+  lane :major do
+    release("major")
+  end
+
+  def release(type)
+    ensure_git_status_clean
+    ensure_git_branch(branch: "master")
+    git_pull
+
+    pod_lib_lint
+    
+    version = version_bump_podspec(
+      path: @podspec_name,
+      bump_type: type
+    )
+    
+    git_add(path: @podspec_name)
+    git_commit(
+      path: @podspec_name,
+      message: "#{version} release 🚀"
+    )
+    add_git_tag(tag: "#{version}")
+    push_to_git_remote
+    # pod_push
+  end
+end
