@@ -11,6 +11,7 @@
 		5D275B9023BE5A11008B1C85 /* QueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B8F23BE5A11008B1C85 /* QueryKey.swift */; };
 		5D275B9223BF5578008B1C85 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9123BF5578008B1C85 /* ResultTests.swift */; };
 		5D275B9423BF619B008B1C85 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9323BF619B008B1C85 /* CodableTests.swift */; };
+		5D275B9623BFA232008B1C85 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9523BFA232008B1C85 /* RequestBuilder.swift */; };
 		5D6EFF1923BCAB2100950162 /* FirestoreClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6EFF0F23BCAB2100950162 /* FirestoreClient.framework */; };
 		5D6EFF1E23BCAB2100950162 /* FirestoreClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EFF1D23BCAB2100950162 /* FirestoreClientTests.swift */; };
 		5D6EFF2023BCAB2100950162 /* FirestoreClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6EFF1223BCAB2100950162 /* FirestoreClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,6 +44,7 @@
 		5D275B8F23BE5A11008B1C85 /* QueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryKey.swift; sourceTree = "<group>"; };
 		5D275B9123BF5578008B1C85 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		5D275B9323BF619B008B1C85 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
+		5D275B9523BFA232008B1C85 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		5D6EFF0F23BCAB2100950162 /* FirestoreClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirestoreClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6EFF1223BCAB2100950162 /* FirestoreClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirestoreClient.h; sourceTree = "<group>"; };
 		5D6EFF1823BCAB2100950162 /* FirestoreClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirestoreClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 				5D7BB4B923BD229F005CEEC7 /* DatabaseResponse.swift */,
 				5D7BB4B523BCFBC5005CEEC7 /* DatabaseReference.swift */,
 				5D7BB4B123BCD8D9005CEEC7 /* DatabaseOperation.swift */,
+				5D275B9523BFA232008B1C85 /* RequestBuilder.swift */,
 				5D275B8F23BE5A11008B1C85 /* QueryKey.swift */,
 				5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */,
 				5D7BB4B723BD0880005CEEC7 /* CoreError.swift */,
@@ -379,6 +382,7 @@
 				5D7BB4BA23BD229F005CEEC7 /* DatabaseResponse.swift in Sources */,
 				5D7BB4B023BCD881005CEEC7 /* QueryBuilder.swift in Sources */,
 				5D7BB4B823BD0880005CEEC7 /* CoreError.swift in Sources */,
+				5D275B9623BFA232008B1C85 /* RequestBuilder.swift in Sources */,
 				5D7BB4AA23BCC899005CEEC7 /* Commons.swift in Sources */,
 				5D7BB4B223BCD8D9005CEEC7 /* DatabaseOperation.swift in Sources */,
 			);

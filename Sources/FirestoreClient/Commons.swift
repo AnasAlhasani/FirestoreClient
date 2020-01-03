@@ -53,3 +53,17 @@ func makeResult<T, E: Error>(_ value: T?, _ error: E?) -> Result<T> {
         return .failure(CoreError.invalidInputCombination)
     }
 }
+
+// MARK: - Buildable
+
+protocol Buildable { }
+
+extension Buildable where Self: AnyObject {
+    func with<T>(
+        _ property: ReferenceWritableKeyPath<Self, T>,
+        _ value: T
+    ) -> Self {
+        self[keyPath: property] = value
+        return self
+    }
+}
