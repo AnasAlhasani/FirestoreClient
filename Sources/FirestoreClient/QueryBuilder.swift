@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-public final class QueryBuilder<T: Codable & QueryKey> {
+public final class QueryBuilder<T: Entity> {
     private var query: Query
     
     init(_ query: Query) {

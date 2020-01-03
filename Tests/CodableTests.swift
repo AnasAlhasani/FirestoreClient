@@ -11,12 +11,7 @@ import XCTest
 
 final class CodableTests: XCTestCase {
     func testEncodingAndDecoding() throws {
-        let exptectedValue = TestEntity(
-            string: "Hello, world!",
-            int: 1,
-            double: 10.0,
-            bool: true
-        )
+        let exptectedValue = TestEntity.create()
         
         let expectedDictionary: JSONDictionary = [
             "string": "Hello, world!",

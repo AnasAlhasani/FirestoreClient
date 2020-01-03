@@ -9,24 +9,42 @@
 import Foundation
 @testable import FirestoreClient
 
-final class TestRequest<T: DatabaseResponse>: DatabaseRequest, Buildable {
+// MARK: - TestRequest
+final class TestRequest<T: Entity>: Request, Buildable {
     typealias Entity = T
     
     var collectionPath = ""
     var documentPath = ""
-    var operation: DatabaseOperation = .retrieve
+    var data: Encodable?
 }
 
-struct TestEntity: DatabaseResponse, Equatable {
+// MARK: - TestEntity
+
+struct TestEntity: Entity, Equatable {
     let string: String
     let int: Int
     let double: Double
     let bool: Bool
 }
 
+extension TestEntity {
+    static func create() -> TestEntity {
+        .init(
+            string: "Hello, world!",
+            int: 1,
+            double: 10.0,
+            bool: true
+        )
+    }
+}
+
+// MARK: - TestError
+
 struct TestError: Error, Equatable {
     
 }
+
+// MARK: - CoreError
 
 extension CoreError: Equatable {
     public static func == (lhs: CoreError, rhs: CoreError) -> Bool {

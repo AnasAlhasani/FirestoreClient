@@ -14,15 +14,15 @@ final class RequestBuilderTests: XCTestCase {
     func testRequestBuilder() {
         let expectedCollectionPath = "collection"
         let expectedDocumentPath = "document"
-        let expectedOperation: DatabaseOperation = .create
+        let expectedEntity = TestEntity.create()
         
         let request = RequestBuilder<TestEntity>()
             .with(\.collectionPath, "collection")
             .with(\.documentPath, "document")
-            .with(\.operation, .create)
+            .with(\.data, expectedEntity)
         
         XCTAssertEqual(expectedCollectionPath, request.collectionPath)
         XCTAssertEqual(expectedDocumentPath, request.documentPath)
-        XCTAssertEqual(expectedOperation, request.operation)
+        XCTAssertEqual(expectedEntity, request.data as? TestEntity)
     }
 }

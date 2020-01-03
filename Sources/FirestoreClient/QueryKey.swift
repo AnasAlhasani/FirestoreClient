@@ -13,6 +13,10 @@ public protocol QueryKey {
 }
 
 extension QueryKey where Self: Codable {
+    static var keys: [PartialKeyPath<Self>: CodingKey] {
+        [:]
+    }
+    
     static func key(from keyPath: PartialKeyPath<Self>) -> String? {
         return keys[keyPath]?.stringValue
     }
