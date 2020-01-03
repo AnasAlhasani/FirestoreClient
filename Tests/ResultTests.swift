@@ -61,15 +61,3 @@ final class ResultTests: XCTestCase {
         }
     }
 }
-
-private extension ResultTests {
-    struct TestError: Error, Equatable {
-        
-    }
-}
-
-extension CoreError: Equatable {
-    public static func == (lhs: CoreError, rhs: CoreError) -> Bool {
-        String(describing: lhs) == String(describing: rhs)
-    }
-}

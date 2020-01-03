@@ -11,7 +11,7 @@ import XCTest
 
 final class CodableTests: XCTestCase {
     func testEncodingAndDecoding() throws {
-        let exptectedValue = TestValue(
+        let exptectedValue = TestEntity(
             string: "Hello, world!",
             int: 1,
             double: 10.0,
@@ -26,7 +26,7 @@ final class CodableTests: XCTestCase {
         ]
         
         let data: Data = try exptectedValue.encoded()
-        let decodableValue: TestValue = try data.decoded()
+        let decodableValue: TestEntity = try data.decoded()
         let dictionaryValue: JSONDictionary = try decodableValue.jsonDictionary()
         
         XCTAssertEqual(exptectedValue, decodableValue)
@@ -35,14 +35,5 @@ final class CodableTests: XCTestCase {
         XCTAssert(dictionaryValue["int"] is Int)
         XCTAssert(dictionaryValue["double"] is Double)
         XCTAssert(dictionaryValue["bool"] is Bool)
-    }
-}
-
-private extension CodableTests {
-    struct TestValue: Codable, Equatable {
-        let string: String
-        let int: Int
-        let double: Double
-        let bool: Bool
     }
 }
