@@ -9,5 +9,11 @@
 import Foundation
 
 public protocol DatabaseClient {
+    associatedtype Database
     
+    var database: Database { get }
+    
+    init(database: Database, dispatchQueue: DispatchQueue)
+    
+    func execute<T: DatabaseRequest>(_ request: T) -> Promise<T.Entity> 
 }

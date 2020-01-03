@@ -3,14 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40F900DCC7D3025414168825 /* Pods_FirestoreClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 068651344C1042C0C8D5B44B /* Pods_FirestoreClient.framework */; };
+		5D275B9023BE5A11008B1C85 /* QueryKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B8F23BE5A11008B1C85 /* QueryKey.swift */; };
+		5D275B9223BF5578008B1C85 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9123BF5578008B1C85 /* ResultTests.swift */; };
+		5D275B9423BF619B008B1C85 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9323BF619B008B1C85 /* CodableTests.swift */; };
 		5D6EFF1923BCAB2100950162 /* FirestoreClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6EFF0F23BCAB2100950162 /* FirestoreClient.framework */; };
 		5D6EFF1E23BCAB2100950162 /* FirestoreClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EFF1D23BCAB2100950162 /* FirestoreClientTests.swift */; };
 		5D6EFF2023BCAB2100950162 /* FirestoreClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6EFF1223BCAB2100950162 /* FirestoreClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D6EFF2C23BCACE600950162 /* DatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6EFF2B23BCACE600950162 /* DatabaseClient.swift */; };
+		5D7BB4AA23BCC899005CEEC7 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4A923BCC899005CEEC7 /* Commons.swift */; };
+		5D7BB4AC23BCC8C6005CEEC7 /* DefaultDatabaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4AB23BCC8C6005CEEC7 /* DefaultDatabaseClient.swift */; };
+		5D7BB4AE23BCCA5A005CEEC7 /* DatabaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4AD23BCCA5A005CEEC7 /* DatabaseRequest.swift */; };
+		5D7BB4B023BCD881005CEEC7 /* QueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */; };
+		5D7BB4B223BCD8D9005CEEC7 /* DatabaseOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4B123BCD8D9005CEEC7 /* DatabaseOperation.swift */; };
+		5D7BB4B623BCFBC5005CEEC7 /* DatabaseReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4B523BCFBC5005CEEC7 /* DatabaseReference.swift */; };
+		5D7BB4B823BD0880005CEEC7 /* CoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4B723BD0880005CEEC7 /* CoreError.swift */; };
+		5D7BB4BA23BD229F005CEEC7 /* DatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4B923BD229F005CEEC7 /* DatabaseResponse.swift */; };
+		9A3375A8AB1EDF0281FE80CD /* Pods_FirestoreClient_FirestoreClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F38406A925F417D7F19074 /* Pods_FirestoreClient_FirestoreClientTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		055D0F0B0FAFF2A5CC0B746D /* Pods-FirestoreClient-FirestoreClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient-FirestoreClientTests.release.xcconfig"; path = "Target Support Files/Pods-FirestoreClient-FirestoreClientTests/Pods-FirestoreClient-FirestoreClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		068651344C1042C0C8D5B44B /* Pods_FirestoreClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29D4AA47843AC80FDAA03DB9 /* Pods-FirestoreClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreClient/Pods-FirestoreClient.debug.xcconfig"; sourceTree = "<group>"; };
+		5D275B8F23BE5A11008B1C85 /* QueryKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryKey.swift; sourceTree = "<group>"; };
+		5D275B9123BF5578008B1C85 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
+		5D275B9323BF619B008B1C85 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		5D6EFF0F23BCAB2100950162 /* FirestoreClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirestoreClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6EFF1223BCAB2100950162 /* FirestoreClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirestoreClient.h; sourceTree = "<group>"; };
 		5D6EFF1823BCAB2100950162 /* FirestoreClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirestoreClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,11 +53,22 @@
 		5D6EFF3123BCADFE00950162 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5D6EFF3223BCADFE00950162 /* FirestoreClient.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = FirestoreClient.podspec; sourceTree = "<group>"; };
 		5D6EFF3323BCADFE00950162 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
-		5D6EFF3423BCADFE00950162 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		5D6EFF3423BCADFE00950162 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5D6EFF3523BCADFE00950162 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		5D6EFF3623BCAEBE00950162 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = "<group>"; };
 		5D6EFF3823BCBE6700950162 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6EFF3A23BCBE8B00950162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D7BB4A923BCC899005CEEC7 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
+		5D7BB4AB23BCC8C6005CEEC7 /* DefaultDatabaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDatabaseClient.swift; sourceTree = "<group>"; };
+		5D7BB4AD23BCCA5A005CEEC7 /* DatabaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRequest.swift; sourceTree = "<group>"; };
+		5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryBuilder.swift; sourceTree = "<group>"; };
+		5D7BB4B123BCD8D9005CEEC7 /* DatabaseOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOperation.swift; sourceTree = "<group>"; };
+		5D7BB4B523BCFBC5005CEEC7 /* DatabaseReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseReference.swift; sourceTree = "<group>"; };
+		5D7BB4B723BD0880005CEEC7 /* CoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreError.swift; sourceTree = "<group>"; };
+		5D7BB4B923BD229F005CEEC7 /* DatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseResponse.swift; sourceTree = "<group>"; };
+		D59CEEBBD7443E77A54BF0A4 /* Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreClient-FirestoreClientTests/Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D80ACCBA66595B4A7DD2ED11 /* Pods-FirestoreClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient.release.xcconfig"; path = "Target Support Files/Pods-FirestoreClient/Pods-FirestoreClient.release.xcconfig"; sourceTree = "<group>"; };
+		D8F38406A925F417D7F19074 /* Pods_FirestoreClient_FirestoreClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreClient_FirestoreClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F900DCC7D3025414168825 /* Pods_FirestoreClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +85,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D6EFF1923BCAB2100950162 /* FirestoreClient.framework in Frameworks */,
+				9A3375A8AB1EDF0281FE80CD /* Pods_FirestoreClient_FirestoreClientTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E94A0D4F335F91AEE761932 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29D4AA47843AC80FDAA03DB9 /* Pods-FirestoreClient.debug.xcconfig */,
+				D80ACCBA66595B4A7DD2ED11 /* Pods-FirestoreClient.release.xcconfig */,
+				D59CEEBBD7443E77A54BF0A4 /* Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig */,
+				055D0F0B0FAFF2A5CC0B746D /* Pods-FirestoreClient-FirestoreClientTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		50B6509A44D242C03F01A2E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				068651344C1042C0C8D5B44B /* Pods_FirestoreClient.framework */,
+				D8F38406A925F417D7F19074 /* Pods_FirestoreClient_FirestoreClientTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5D6EFF0523BCAB2100950162 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +119,8 @@
 				5D6EFF1123BCAB2100950162 /* Sources */,
 				5D6EFF1C23BCAB2100950162 /* Tests */,
 				5D6EFF1023BCAB2100950162 /* Products */,
+				1E94A0D4F335F91AEE761932 /* Pods */,
+				50B6509A44D242C03F01A2E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				5D6EFF1D23BCAB2100950162 /* FirestoreClientTests.swift */,
+				5D275B9323BF619B008B1C85 /* CodableTests.swift */,
+				5D275B9123BF5578008B1C85 /* ResultTests.swift */,
 				5D6EFF3A23BCBE8B00950162 /* Info.plist */,
 			);
 			path = Tests;
@@ -110,6 +166,15 @@
 			isa = PBXGroup;
 			children = (
 				5D6EFF2B23BCACE600950162 /* DatabaseClient.swift */,
+				5D7BB4AB23BCC8C6005CEEC7 /* DefaultDatabaseClient.swift */,
+				5D7BB4AD23BCCA5A005CEEC7 /* DatabaseRequest.swift */,
+				5D7BB4B923BD229F005CEEC7 /* DatabaseResponse.swift */,
+				5D7BB4B523BCFBC5005CEEC7 /* DatabaseReference.swift */,
+				5D7BB4B123BCD8D9005CEEC7 /* DatabaseOperation.swift */,
+				5D275B8F23BE5A11008B1C85 /* QueryKey.swift */,
+				5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */,
+				5D7BB4B723BD0880005CEEC7 /* CoreError.swift */,
+				5D7BB4A923BCC899005CEEC7 /* Commons.swift */,
 			);
 			path = FirestoreClient;
 			sourceTree = "<group>";
@@ -147,6 +212,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D6EFF2323BCAB2100950162 /* Build configuration list for PBXNativeTarget "FirestoreClient" */;
 			buildPhases = (
+				2D327826A05F33A6AE0E332D /* [CP] Check Pods Manifest.lock */,
 				5D6EFF0A23BCAB2100950162 /* Headers */,
 				5D6EFF0B23BCAB2100950162 /* Sources */,
 				5D6EFF0C23BCAB2100950162 /* Frameworks */,
@@ -165,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5D6EFF2623BCAB2100950162 /* Build configuration list for PBXNativeTarget "FirestoreClientTests" */;
 			buildPhases = (
+				3381B43BD735895B747DBBFF /* [CP] Check Pods Manifest.lock */,
 				5D6EFF1423BCAB2100950162 /* Sources */,
 				5D6EFF1523BCAB2100950162 /* Frameworks */,
 				5D6EFF1623BCAB2100950162 /* Resources */,
+				C5F7A70FDB11638CCB1C674B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,12 +302,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D327826A05F33A6AE0E332D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirestoreClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3381B43BD735895B747DBBFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirestoreClient-FirestoreClientTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5F7A70FDB11638CCB1C674B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreClient-FirestoreClientTests/Pods-FirestoreClient-FirestoreClientTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirestoreClient-FirestoreClientTests/Pods-FirestoreClient-FirestoreClientTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirestoreClient-FirestoreClientTests/Pods-FirestoreClient-FirestoreClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5D6EFF0B23BCAB2100950162 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5D6EFF2C23BCACE600950162 /* DatabaseClient.swift in Sources */,
+				5D7BB4B623BCFBC5005CEEC7 /* DatabaseReference.swift in Sources */,
+				5D7BB4AC23BCC8C6005CEEC7 /* DefaultDatabaseClient.swift in Sources */,
+				5D7BB4AE23BCCA5A005CEEC7 /* DatabaseRequest.swift in Sources */,
+				5D275B9023BE5A11008B1C85 /* QueryKey.swift in Sources */,
+				5D7BB4BA23BD229F005CEEC7 /* DatabaseResponse.swift in Sources */,
+				5D7BB4B023BCD881005CEEC7 /* QueryBuilder.swift in Sources */,
+				5D7BB4B823BD0880005CEEC7 /* CoreError.swift in Sources */,
+				5D7BB4AA23BCC899005CEEC7 /* Commons.swift in Sources */,
+				5D7BB4B223BCD8D9005CEEC7 /* DatabaseOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +388,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D275B9223BF5578008B1C85 /* ResultTests.swift in Sources */,
 				5D6EFF1E23BCAB2100950162 /* FirestoreClientTests.swift in Sources */,
+				5D275B9423BF619B008B1C85 /* CodableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +529,7 @@
 		};
 		5D6EFF2423BCAB2100950162 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29D4AA47843AC80FDAA03DB9 /* Pods-FirestoreClient.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -412,6 +556,7 @@
 		};
 		5D6EFF2523BCAB2100950162 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D80ACCBA66595B4A7DD2ED11 /* Pods-FirestoreClient.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -437,8 +582,8 @@
 		};
 		5D6EFF2723BCAB2100950162 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D59CEEBBD7443E77A54BF0A4 /* Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 298NDPSP4M;
 				INFOPLIST_FILE = Tests/Info.plist;
@@ -456,8 +601,8 @@
 		};
 		5D6EFF2823BCAB2100950162 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 055D0F0B0FAFF2A5CC0B746D /* Pods-FirestoreClient-FirestoreClientTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 298NDPSP4M;
 				INFOPLIST_FILE = Tests/Info.plist;
