@@ -9,7 +9,15 @@
 import Foundation
 @testable import FirestoreClient
 
-struct TestEntity: Codable, Equatable {
+final class TestRequest<T: DatabaseResponse>: DatabaseRequest, Buildable {
+    typealias Entity = T
+    
+    var collectionPath = ""
+    var documentPath = ""
+    var operation: DatabaseOperation = .retrieve
+}
+
+struct TestEntity: DatabaseResponse, Equatable {
     let string: String
     let int: Int
     let double: Double
