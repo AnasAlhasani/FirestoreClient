@@ -9,10 +9,10 @@
 import Foundation
 import FirebaseFirestore
 
-public final class QueryBuilder<T: Codable & QueryKey> {
-    private var query: Query
+public final class QueryBuilder<T: Query> {
+    private var query: FirebaseFirestore.Query
     
-    init(_ query: Query) {
+    init(_ query: FirebaseFirestore.Query) {
         self.query = query
     }
     
@@ -20,7 +20,7 @@ public final class QueryBuilder<T: Codable & QueryKey> {
         return T.key(from: keyPath) ?? ""
     }
     
-    func build() -> Query {
+    func build() -> FirebaseFirestore.Query {
         return query
     }
 }

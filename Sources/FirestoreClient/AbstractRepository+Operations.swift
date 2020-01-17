@@ -13,9 +13,9 @@ import FirebaseFirestoreSwift
 // MARK: - Read Operations
 
 public extension AbstractRepository {
-    func query(builder: @escaping QueryHandler<Query>) -> Promise<[Query]> {
+    func query(builder: @escaping QueryHandler<Value>) -> Promise<[Value]> {
         let collection = database.collection(path.value)
-        let query = builder(QueryBuilder<Query>(collection)).build()
+        let query = builder(QueryBuilder<Value>(collection)).build()
         return Promise { fullfill, reject in
             query.getDocuments { (snapshot, error) in
                 do {
@@ -117,9 +117,9 @@ private extension AbstractRepository {
         return value
     }
     
-    func makeValues(_ snapshot: QuerySnapshot) throws -> [Query] {
+    func makeValues(_ snapshot: QuerySnapshot) throws -> [Value] {
         do {
-            return try snapshot.documents.compactMap { try $0.data(as: Query.self) }
+            return try snapshot.documents.compactMap { try $0.data(as: Value.self) }
         } catch {
             throw CoreError.decodableMapping
         }
