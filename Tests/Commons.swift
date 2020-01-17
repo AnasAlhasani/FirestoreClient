@@ -7,20 +7,11 @@
 //
 
 import Foundation
-@testable import FirestoreClient
-
-// MARK: - TestRequest
-final class TestRequest<T: Entity>: Request, Buildable {
-    typealias Entity = T
-    
-    var collectionPath = ""
-    var documentPath = ""
-    var data: Encodable?
-}
+import FirestoreClient
 
 // MARK: - TestEntity
 
-struct TestEntity: Entity, Equatable {
+struct TestEntity: Codable, Equatable {
     let string: String
     let int: Int
     let double: Double

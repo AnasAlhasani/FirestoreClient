@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-public final class QueryBuilder<T: Entity> {
+public final class QueryBuilder<T: Codable & QueryKey> {
     private var query: Query
     
     init(_ query: Query) {
@@ -20,12 +20,12 @@ public final class QueryBuilder<T: Entity> {
         return T.key(from: keyPath) ?? ""
     }
     
-    public func build() -> Query {
+    func build() -> Query {
         return query
     }
 }
 
-extension QueryBuilder {
+public extension QueryBuilder {
     @discardableResult
     func filter<V: Equatable>(by keyPath: KeyPath<T, V>, equal value: V) -> Self {
         query = query.whereField(key(from: keyPath), isEqualTo: value)

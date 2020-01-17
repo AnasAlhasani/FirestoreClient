@@ -9,11 +9,14 @@
 import Foundation
 
 public protocol AbstractRepository {
-    associatedtype Value: Entity
+    associatedtype Value: Codable
+    associatedtype Query: Codable & QueryKey
     
-    func query(_ request: Request, builder: @escaping QueryHandler<Value>) -> Promise<[Value]>
-    func fetch(_ request: Request) -> Promise<[Value]>
-    func save(_ request: Request) -> Promise<Void>
-    func update(_ request: Request) -> Promise<Void>
-    func delete(_ request: Request) -> Promise<Void>
+    var path: Path { get }
+    
+    func query(builder: @escaping QueryHandler<Query>) -> Promise<[Query]>
+    func fetch(path: Path) -> Promise<Value>
+    func save(entity: Encodable) -> Promise<Void>
+    func update(entity: Encodable) -> Promise<Void>
+    func delete(path: Path) -> Promise<Void>
 }

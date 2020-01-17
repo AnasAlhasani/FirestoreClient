@@ -12,16 +12,14 @@
 		5D275B9223BF5578008B1C85 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9123BF5578008B1C85 /* ResultTests.swift */; };
 		5D275B9423BF619B008B1C85 /* CodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9323BF619B008B1C85 /* CodableTests.swift */; };
 		5D275B9B23BFA5A0008B1C85 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9923BFA52E008B1C85 /* Commons.swift */; };
-		5D275B9D23BFA78E008B1C85 /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9C23BFA78E008B1C85 /* RequestBuilderTests.swift */; };
 		5D275B9F23BFF397008B1C85 /* AbstractRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275B9E23BFF397008B1C85 /* AbstractRepository.swift */; };
-		5D275BA123BFFDC2008B1C85 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275BA023BFFDC2008B1C85 /* Entity.swift */; };
 		5D275BA323BFFEED008B1C85 /* AbstractRepository+Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D275BA223BFFEED008B1C85 /* AbstractRepository+Operations.swift */; };
 		5D6EFF1923BCAB2100950162 /* FirestoreClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D6EFF0F23BCAB2100950162 /* FirestoreClient.framework */; };
 		5D6EFF2023BCAB2100950162 /* FirestoreClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D6EFF1223BCAB2100950162 /* FirestoreClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D7BB4AA23BCC899005CEEC7 /* Commons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4A923BCC899005CEEC7 /* Commons.swift */; };
-		5D7BB4AE23BCCA5A005CEEC7 /* Request+Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4AD23BCCA5A005CEEC7 /* Request+Builder.swift */; };
 		5D7BB4B023BCD881005CEEC7 /* QueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */; };
 		5D7BB4B823BD0880005CEEC7 /* CoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4B723BD0880005CEEC7 /* CoreError.swift */; };
+		5DD5B89623CA7640009FA1A4 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5B89523CA7640009FA1A4 /* Path.swift */; };
 		9A3375A8AB1EDF0281FE80CD /* Pods_FirestoreClient_FirestoreClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F38406A925F417D7F19074 /* Pods_FirestoreClient_FirestoreClientTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +41,7 @@
 		5D275B9123BF5578008B1C85 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		5D275B9323BF619B008B1C85 /* CodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTests.swift; sourceTree = "<group>"; };
 		5D275B9923BFA52E008B1C85 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
-		5D275B9C23BFA78E008B1C85 /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
 		5D275B9E23BFF397008B1C85 /* AbstractRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRepository.swift; sourceTree = "<group>"; };
-		5D275BA023BFFDC2008B1C85 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		5D275BA223BFFEED008B1C85 /* AbstractRepository+Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AbstractRepository+Operations.swift"; sourceTree = "<group>"; };
 		5D6EFF0F23BCAB2100950162 /* FirestoreClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirestoreClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6EFF1223BCAB2100950162 /* FirestoreClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirestoreClient.h; sourceTree = "<group>"; };
@@ -61,9 +57,9 @@
 		5D6EFF3823BCBE6700950162 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6EFF3A23BCBE8B00950162 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D7BB4A923BCC899005CEEC7 /* Commons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commons.swift; sourceTree = "<group>"; };
-		5D7BB4AD23BCCA5A005CEEC7 /* Request+Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Request+Builder.swift"; sourceTree = "<group>"; };
 		5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryBuilder.swift; sourceTree = "<group>"; };
 		5D7BB4B723BD0880005CEEC7 /* CoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreError.swift; sourceTree = "<group>"; };
+		5DD5B89523CA7640009FA1A4 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		D59CEEBBD7443E77A54BF0A4 /* Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreClient-FirestoreClientTests/Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D80ACCBA66595B4A7DD2ED11 /* Pods-FirestoreClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient.release.xcconfig"; path = "Target Support Files/Pods-FirestoreClient/Pods-FirestoreClient.release.xcconfig"; sourceTree = "<group>"; };
 		D8F38406A925F417D7F19074 /* Pods_FirestoreClient_FirestoreClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreClient_FirestoreClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,7 +139,6 @@
 		5D6EFF1C23BCAB2100950162 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				5D275B9C23BFA78E008B1C85 /* RequestBuilderTests.swift */,
 				5D275B9323BF619B008B1C85 /* CodableTests.swift */,
 				5D275B9123BF5578008B1C85 /* ResultTests.swift */,
 				5D275B9923BFA52E008B1C85 /* Commons.swift */,
@@ -166,10 +161,9 @@
 			children = (
 				5D275B9E23BFF397008B1C85 /* AbstractRepository.swift */,
 				5D275BA223BFFEED008B1C85 /* AbstractRepository+Operations.swift */,
-				5D275BA023BFFDC2008B1C85 /* Entity.swift */,
+				5DD5B89523CA7640009FA1A4 /* Path.swift */,
 				5D275B8F23BE5A11008B1C85 /* QueryKey.swift */,
 				5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */,
-				5D7BB4AD23BCCA5A005CEEC7 /* Request+Builder.swift */,
 				5D7BB4B723BD0880005CEEC7 /* CoreError.swift */,
 				5D7BB4A923BCC899005CEEC7 /* Commons.swift */,
 			);
@@ -368,13 +362,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D7BB4AE23BCCA5A005CEEC7 /* Request+Builder.swift in Sources */,
 				5D275B9023BE5A11008B1C85 /* QueryKey.swift in Sources */,
 				5D7BB4B023BCD881005CEEC7 /* QueryBuilder.swift in Sources */,
 				5D7BB4B823BD0880005CEEC7 /* CoreError.swift in Sources */,
 				5D275BA323BFFEED008B1C85 /* AbstractRepository+Operations.swift in Sources */,
-				5D275BA123BFFDC2008B1C85 /* Entity.swift in Sources */,
 				5D275B9F23BFF397008B1C85 /* AbstractRepository.swift in Sources */,
+				5DD5B89623CA7640009FA1A4 /* Path.swift in Sources */,
 				5D7BB4AA23BCC899005CEEC7 /* Commons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,7 +377,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D275B9B23BFA5A0008B1C85 /* Commons.swift in Sources */,
-				5D275B9D23BFA78E008B1C85 /* RequestBuilderTests.swift in Sources */,
 				5D275B9223BF5578008B1C85 /* ResultTests.swift in Sources */,
 				5D275B9423BF619B008B1C85 /* CodableTests.swift in Sources */,
 			);

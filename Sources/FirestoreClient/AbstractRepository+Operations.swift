@@ -10,20 +10,18 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+// MARK: - Read Operations
+
 public extension AbstractRepository {
-    var database: Firestore {
-        .firestore()
-    }
-    
-    func query(_ request: Request, builder: @escaping QueryHandler<Value>) -> Promise<[Value]> {
-        let reference = database.collection(request.collectionPath)
-        let query = builder(QueryBuilder<Value>(reference)).build()
+    func query(builder: @escaping QueryHandler<Query>) -> Promise<[Query]> {
+        let collection = database.collection(path.value)
+        let query = builder(QueryBuilder<Query>(collection)).build()
         return Promise { fullfill, reject in
             query.getDocuments { (snapshot, error) in
                 do {
-                    let documents = try makeResult(snapshot, error).get().documents
-                    let items = try documents.compactMap { try $0.data(as: Value.self) }
-                    fullfill(items)
+                    let snapshot = try makeResult(snapshot, error).get()
+                    let values = try self.makeValues(snapshot)
+                    fullfill(values)
                 } catch {
                      reject(error)
                 }
@@ -31,29 +29,99 @@ public extension AbstractRepository {
         }
     }
     
-    func fetch(_ request: Request) -> Promise<[Value]> {
-        fatalError("Not ready yet.")
+    func fetch(path: Path) -> Promise<Value> {
+        let document = database.document(path.value)
+        return Promise(on: .global(qos: .background)) { fullfill, reject in
+            document.getDocument { snapshot, error in
+                do {
+                    let snapshot = try makeResult(snapshot, error).get()
+                    let value = try self.makeValue(snapshot)
+                    fullfill(value)
+                } catch {
+                    reject(error)
+                }
+            }
+        }
+    }
+}
+
+// MARK: - Write Operations
+
+public extension AbstractRepository {
+    func save(entity: Encodable) -> Promise<Void> {
+        do {
+            let document = database.document(path.value)
+            let json = try entity.jsonDictionary()
+            return Promise(on: .global(qos: .background)) { fullfill, reject in
+                document.setData(json, merge: false) { error in
+                    if let error = error {
+                        reject(error)
+                    } else {
+                        fullfill(())
+                    }
+                }
+            }
+        } catch {
+            return .init(error)
+        }
     }
     
-    func save(_ request: Request) -> Promise<Void> {
-        fatalError("Not ready yet.")
+    func update(entity: Encodable) -> Promise<Void> {
+        do {
+            let document = database.document(path.value)
+            let json = try entity.jsonDictionary()
+            return Promise(on: .global(qos: .background)) { fullfill, reject in
+                document.updateData(json) { error in
+                    if let error = error {
+                        reject(error)
+                    } else {
+                        fullfill(())
+                    }
+                }
+            }
+        } catch {
+            return .init(error)
+        }
     }
     
-    func update(_ request: Request) -> Promise<Void> {
-        fatalError("Not ready yet.")
-    }
-    
-    func delete(_ request: Request) -> Promise<Void> {
-        let collection = database.collection(request.collectionPath)
-        let document = collection.document(request.documentPath)
-        return Promise { fullfill, reject in
-            document.delete { (error) in
+    func delete(path: Path) -> Promise<Void> {
+        let document = database.document(path.value)
+        return Promise(on: .global(qos: .background)) { fullfill, reject in
+            document.delete { error in
                 if let error = error {
                     reject(error)
                 } else {
                     fullfill(())
                 }
             }
+        }
+    }
+}
+
+// MARK: - Helpers
+
+private extension AbstractRepository {
+    var database: Firestore {
+        .firestore()
+    }
+    
+    func makeValue(_ snapshot: DocumentSnapshot) throws -> Value {
+        guard snapshot.exists else {
+            throw CoreError.snapshotNotExists
+        }
+        
+        guard let value = try snapshot.data(as: Value.self) else {
+            throw CoreError.decodableMapping
+        }
+        
+        return value
+    }
+    
+    func makeValues(_ snapshot: QuerySnapshot) throws -> [Query] {
+        do {
+            return try snapshot.documents.compactMap { try $0.data(as: Query.self) }
+        } catch {
+            throw CoreError.decodableMapping
         }
     }
 }

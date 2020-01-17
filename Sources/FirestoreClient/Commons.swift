@@ -15,7 +15,7 @@ public typealias Promise<T> = Promises.Promise<T>
 public typealias Result<T> = Swift.Result<T, Error>
 public typealias JSONDictionary = [String: Any]
 public typealias JSONArray = [JSONDictionary]
-public typealias QueryHandler<T: Entity> = (QueryBuilder<T>) -> QueryBuilder<T>
+public typealias QueryHandler<T: Codable & QueryKey> = (QueryBuilder<T>) -> QueryBuilder<T>
 
 // MARK: - Extensions
 
