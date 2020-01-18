@@ -9,35 +9,32 @@
 import Foundation
 import FirebaseFirestore
 
-public protocol Path {
-    var value: String { get }
-    init(_ value: String)
-}
-
-// MARK: - Collection
-
-public final class Collection: Path {
+public final class Path {
     public private(set) var value: String
     
     public init(_ value: String) {
         self.value = value
     }
     
-    public func document(_ path: String) -> Document {
+    public func append(_ path: String) -> Path {
         .init([value, path].joined(separator: "/"))
     }
 }
 
-// MARK: - Document
-
-public final class Document: Path {
-    public private(set) var value: String
-    
-    public init(_ value: String) {
-        self.value = value
+extension Path {
+    var collectionReference: CollectionReference {
+        Firestore.firestore().collection(value)
     }
     
-    public func collection(_ path: String) -> Collection {
-        .init([value, path].joined(separator: "/"))
+    var collectionID: String {
+        collectionReference.collectionID
+    }
+    
+    func documentReference(id: String? = nil) -> DocumentReference {
+        if let id = id {
+            return collectionReference.document(id)
+        } else {
+            return collectionReference.document()
+        }
     }
 }

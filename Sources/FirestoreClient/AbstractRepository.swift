@@ -14,8 +14,8 @@ public protocol AbstractRepository {
     var path: Path { get }
     
     func query(builder: @escaping QueryHandler<Value>) -> Promise<[Value]>
-    func fetch(path: Path) -> Promise<Value>
+    func fetch(byID id: String) -> Promise<Value>
     func save(entity: Encodable) -> Promise<Void>
     func update(entity: Encodable) -> Promise<Void>
-    func delete(path: Path) -> Promise<Void>
+    func delete(byID id: String) -> Promise<Void>
 }
