@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,8 @@
 		5D7BB4B023BCD881005CEEC7 /* QueryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */; };
 		5D7BB4B823BD0880005CEEC7 /* CoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D7BB4B723BD0880005CEEC7 /* CoreError.swift */; };
 		5DD5B89623CA7640009FA1A4 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD5B89523CA7640009FA1A4 /* Path.swift */; };
+		5DDF8C9723D4C37800CD64C6 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDF8C9623D4C37800CD64C6 /* Entity.swift */; };
+		5DDF8CA223D4E0B900CD64C6 /* Identity in Frameworks */ = {isa = PBXBuildFile; productRef = 5DDF8CA123D4E0B900CD64C6 /* Identity */; };
 		9A3375A8AB1EDF0281FE80CD /* Pods_FirestoreClient_FirestoreClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F38406A925F417D7F19074 /* Pods_FirestoreClient_FirestoreClientTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,7 @@
 		5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryBuilder.swift; sourceTree = "<group>"; };
 		5D7BB4B723BD0880005CEEC7 /* CoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreError.swift; sourceTree = "<group>"; };
 		5DD5B89523CA7640009FA1A4 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		5DDF8C9623D4C37800CD64C6 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		D59CEEBBD7443E77A54BF0A4 /* Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig"; path = "Target Support Files/Pods-FirestoreClient-FirestoreClientTests/Pods-FirestoreClient-FirestoreClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D80ACCBA66595B4A7DD2ED11 /* Pods-FirestoreClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreClient.release.xcconfig"; path = "Target Support Files/Pods-FirestoreClient/Pods-FirestoreClient.release.xcconfig"; sourceTree = "<group>"; };
 		D8F38406A925F417D7F19074 /* Pods_FirestoreClient_FirestoreClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreClient_FirestoreClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DDF8CA223D4E0B900CD64C6 /* Identity in Frameworks */,
 				40F900DCC7D3025414168825 /* Pods_FirestoreClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +172,7 @@
 				5D75DB6323D32662006A3EC5 /* AbstractRepository+write.swift */,
 				5D75DB5623D305FA006A3EC5 /* FirestoreRepository.swift */,
 				5DD5B89523CA7640009FA1A4 /* Path.swift */,
+				5DDF8C9623D4C37800CD64C6 /* Entity.swift */,
 				5D275B8F23BE5A11008B1C85 /* QueryKey.swift */,
 				5D7BB4AF23BCD881005CEEC7 /* QueryBuilder.swift */,
 				5D7BB4B723BD0880005CEEC7 /* CoreError.swift */,
@@ -220,6 +225,9 @@
 			dependencies = (
 			);
 			name = FirestoreClient;
+			packageProductDependencies = (
+				5DDF8CA123D4E0B900CD64C6 /* Identity */,
+			);
 			productName = FirestoreClient;
 			productReference = 5D6EFF0F23BCAB2100950162 /* FirestoreClient.framework */;
 			productType = "com.apple.product-type.framework";
@@ -272,6 +280,9 @@
 				Base,
 			);
 			mainGroup = 5D6EFF0523BCAB2100950162;
+			packageReferences = (
+				5DDF8CA023D4E0B900CD64C6 /* XCRemoteSwiftPackageReference "Identity" */,
+			);
 			productRefGroup = 5D6EFF1023BCAB2100950162 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -374,6 +385,7 @@
 				5D275B9F23BFF397008B1C85 /* AbstractRepository.swift in Sources */,
 				5D75DB6423D32662006A3EC5 /* AbstractRepository+write.swift in Sources */,
 				5DD5B89623CA7640009FA1A4 /* Path.swift in Sources */,
+				5DDF8C9723D4C37800CD64C6 /* Entity.swift in Sources */,
 				5D75DB6223D32655006A3EC5 /* AbstractRepository+read.swift in Sources */,
 				5D7BB4AA23BCC899005CEEC7 /* Commons.swift in Sources */,
 				5D75DB5723D305FA006A3EC5 /* FirestoreRepository.swift in Sources */,
@@ -645,6 +657,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5DDF8CA023D4E0B900CD64C6 /* XCRemoteSwiftPackageReference "Identity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/Identity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5DDF8CA123D4E0B900CD64C6 /* Identity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5DDF8CA023D4E0B900CD64C6 /* XCRemoteSwiftPackageReference "Identity" */;
+			productName = Identity;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D6EFF0623BCAB2100950162 /* Project object */;
 }

@@ -9,11 +9,12 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
+import Identity
 
 // MARK: - Read Operations
 
 public extension AbstractRepository {
-    func query(builder: @escaping QueryHandler<Value>) -> Promise<[Value]> {
+    func query(builder: @escaping QueryHandler<Value> = { $0 }) -> Promise<[Value]> {
         let collection = path.collectionReference
         let query = builder(QueryBuilder<Value>(collection)).build()
         return Promise { fullfill, reject in
@@ -29,8 +30,8 @@ public extension AbstractRepository {
         }
     }
     
-    func fetch(byID id: String) -> Promise<Value> {
-        let document = path.documentReference(id: id)
+    func fetch(byID id: Identifier<Value>) -> Promise<Value> {
+        let document = path.documentReference(id: id.rawValue)
         return Promise(on: .global(qos: .background)) { fullfill, reject in
             document.getDocument { snapshot, error in
                 do {

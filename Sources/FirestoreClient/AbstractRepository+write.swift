@@ -8,14 +8,17 @@
 
 import Foundation
 import FirebaseFirestore
+import Identity
 
 // MARK: - Write Operations
 
 public extension AbstractRepository {
-    func save(entity: Encodable) -> Promise<Void> {
+    @discardableResult
+    func save<E: Entity>(entity: E) -> Promise<Void> {
         do {
             let document = path.documentReference()
-            let json = try entity.jsonDictionary()
+            var json = try entity.jsonDictionary()
+            json[FieldName.id.rawValue] = document.documentID
             return Promise(on: .global(qos: .background)) { fullfill, reject in
                 document.setData(json, merge: false) { error in
                     if let error = error {
@@ -30,9 +33,10 @@ public extension AbstractRepository {
         }
     }
     
-    func update(entity: Encodable) -> Promise<Void> {
+    @discardableResult
+    func update<E: Entity>(entity: E) -> Promise<Void> {
         do {
-            let document = path.documentReference()
+            let document = path.documentReference(id: entity.id.rawValue)
             let json = try entity.jsonDictionary()
             return Promise(on: .global(qos: .background)) { fullfill, reject in
                 document.updateData(json) { error in
@@ -48,8 +52,9 @@ public extension AbstractRepository {
         }
     }
     
-    func delete(byID id: String) -> Promise<Void> {
-        let document = path.documentReference(id: id)
+    @discardableResult
+    func delete(byID id: Identifier<Value>) -> Promise<Void> {
+        let document = path.documentReference(id: id.rawValue)
         return Promise(on: .global(qos: .background)) { fullfill, reject in
             document.delete { error in
                 if let error = error {
