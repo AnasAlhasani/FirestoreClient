@@ -6,6 +6,7 @@ inhibit_all_warnings!
 target 'FirestoreClient' do
   pod 'PromisesSwift'
   pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
   
   target 'FirestoreClientTests' do
   end
