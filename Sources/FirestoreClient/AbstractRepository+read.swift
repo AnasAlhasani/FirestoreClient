@@ -9,7 +9,6 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-import Identity
 
 // MARK: - Read Operations
 

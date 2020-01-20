@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Identity
 
 public protocol Entity: Codable, Identifiable where RawIdentifier == String {
     

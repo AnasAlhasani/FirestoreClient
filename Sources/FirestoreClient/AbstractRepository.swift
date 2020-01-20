@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Identity
 
 public protocol AbstractRepository {
     associatedtype Value: Query

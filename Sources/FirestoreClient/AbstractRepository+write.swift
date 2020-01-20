@@ -8,7 +8,6 @@
 
 import Foundation
 import FirebaseFirestore
-import Identity
 
 // MARK: - Write Operations
 
