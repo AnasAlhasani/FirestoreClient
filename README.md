@@ -3,7 +3,10 @@
 <p align="justify">
     <img src="https://app.bitrise.io/app/e3bc37ec74219dc7/status.svg?token=QIzG7rPS8Vd1F2Bc8uDScw&branch=master" />
     <img src="https://img.shields.io/badge/Swift-5.1-orange.svg" />
-    <img src="https://img.shields.io/badge/Platforms-iOS%20%7C%20watchOS-blue.svg?style=flat" />
+    <img src="https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat" />
+    <a href="https://cocoapods.org/pods/FirestoreClient">
+        <img alt="Cocoapods" src="https://img.shields.io/cocoapods/v/FirestoreClient">
+    </a>
     <a href="https://codebeat.co/projects/github-com-anasalhasani-firestoreclient-master">
         <img alt="codebeat badge" src="https://codebeat.co/badges/392c2fcd-7cfa-4f10-90ae-aef00c98e0f7" />
     </a>
@@ -132,7 +135,7 @@ final class DefaultUseCaseFactory: UseCaseFactory {
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate FirestoreClient into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'FirestoreClient', :git => 'https://github.com/AnasAlhasani/FirestoreClient'
+pod 'FirestoreClient'
 ```
 
 Then, run the following command:
