@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/AnasAlhasani/FirestoreClient.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/AlhasaniAnas'
   s.ios.deployment_target = '10.0'
-  s.watchos.deployment_target = '4.0'
   s.swift_version = '5.1'
   s.requires_arc     = true
   s.static_framework = true
