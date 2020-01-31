@@ -1,5 +1,5 @@
 //
-//  FirestoreRepository.swift
+//  DefaultRepository.swift
 //  FirestoreClient
 //
 //  Created by Anas Alhasani on 1/18/20.
@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseFirestore
 
-public final class FirestoreRepository<V>: AbstractRepository where V: Query {
+public final class DefaultRepository<V>: AbstractRepository where V: Query {
     public typealias Value = V
     
     public let path: Path
