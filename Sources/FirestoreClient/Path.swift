@@ -26,10 +26,6 @@ extension Path {
         Firestore.firestore().collection(value)
     }
     
-    var collectionID: String {
-        collectionReference.collectionID
-    }
-    
     func documentReference(id: String? = nil) -> DocumentReference {
         if let id = id {
             return collectionReference.document(id)
