@@ -13,9 +13,10 @@ import FirebaseFirestoreSwift
 // MARK: - Read Operations
 
 public extension AbstractRepository {
-    func listen(handler: @escaping ResultHandler<[Entity]>) {
+    @discardableResult
+    func listen(handler: @escaping ResultHandler<[Entity]>) -> Listener {
         let collection = path.collectionReference
-        collection.addSnapshotListener(completion(handler))
+        return collection.addSnapshotListener(completion(handler)).asListener()
     }
     
     func fetch(handler: @escaping ResultHandler<[Entity]>) {
@@ -30,13 +31,14 @@ public extension AbstractRepository {
 }
 
 public extension AbstractRepository where Entity: QueryKey {
+    @discardableResult
     func listen(
         queryBuilder: @escaping QueryHandler<Entity> = { $0 },
         handler: @escaping ResultHandler<[Entity]>
-    ) {
+    ) -> Listener {
         let collection = path.collectionReference
         let query = queryBuilder(QueryBuilder<Entity>(collection)).build()
-        query.addSnapshotListener(completion(handler))
+        return query.addSnapshotListener(completion(handler)).asListener()
     }
     
     func fetch(
