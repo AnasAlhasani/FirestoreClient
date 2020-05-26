@@ -12,56 +12,29 @@ import FirebaseFirestore
 // MARK: - Write Operations
 
 public extension AbstractRepository {
-    @discardableResult
-    func save<E: Entity>(entity: E) -> Promise<Void> {
+    func save(entity: Entity, handler: @escaping ResultHandler<Void>) {
         do {
             let document = path.documentReference()
             var json = try entity.jsonDictionary()
             json[FieldName.id.rawValue] = document.documentID
-            return Promise(on: .global(qos: .background)) { fullfill, reject in
-                document.setData(json, merge: false) { error in
-                    if let error = error {
-                        reject(error)
-                    } else {
-                        fullfill(())
-                    }
-                }
-            }
+            document.setData(json, merge: false) { handler(makeResult($0)) }
         } catch {
-            return .init(error)
+            handler(.failure(error))
         }
     }
     
-    @discardableResult
-    func update<E: Entity>(entity: E) -> Promise<Void> {
+    func update(entity: Entity, handler: @escaping ResultHandler<Void>) {
         do {
             let document = path.documentReference(id: entity.id.rawValue)
             let json = try entity.jsonDictionary()
-            return Promise(on: .global(qos: .background)) { fullfill, reject in
-                document.updateData(json) { error in
-                    if let error = error {
-                        reject(error)
-                    } else {
-                        fullfill(())
-                    }
-                }
-            }
+            document.updateData(json) { handler(makeResult($0)) }
         } catch {
-            return .init(error)
+            handler(.failure(error))
         }
     }
     
-    @discardableResult
-    func delete(byID id: Identifier<Value>) -> Promise<Void> {
+    func delete(byID id: ID, handler: @escaping ResultHandler<Void>) {
         let document = path.documentReference(id: id.rawValue)
-        return Promise(on: .global(qos: .background)) { fullfill, reject in
-            document.delete { error in
-                if let error = error {
-                    reject(error)
-                } else {
-                    fullfill(())
-                }
-            }
-        }
+        document.delete { handler(makeResult($0)) }
     }
 }

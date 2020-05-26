@@ -16,5 +16,4 @@ Pod::Spec.new do |s|
   s.dependency     'Firebase/Core'
   s.dependency     'Firebase/Firestore'
   s.dependency     'FirebaseFirestoreSwift'
-  s.dependency     'PromisesSwift'
 end

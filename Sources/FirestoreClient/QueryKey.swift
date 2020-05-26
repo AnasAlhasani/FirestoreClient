@@ -9,7 +9,9 @@
 import Foundation
 
 public protocol QueryKey {
-    static var keys: [PartialKeyPath<Self>: CodingKey] { get }
+    typealias Keys = [PartialKeyPath<Self>: CodingKey]
+    
+    static var keys: Keys { get }
 }
 
 extension QueryKey where Self: Codable {

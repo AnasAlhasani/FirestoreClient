@@ -4,7 +4,6 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'FirestoreClient' do
-  pod 'PromisesSwift'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   

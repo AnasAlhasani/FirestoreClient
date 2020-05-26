@@ -171,8 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				5D275B9E23BFF397008B1C85 /* AbstractRepository.swift */,
-				5D75DB6323D32662006A3EC5 /* AbstractRepository+write.swift */,
 				5D75DB6123D32655006A3EC5 /* AbstractRepository+read.swift */,
+				5D75DB6323D32662006A3EC5 /* AbstractRepository+write.swift */,
 				5D75DB5623D305FA006A3EC5 /* DefaultRepository.swift */,
 				5DD5B89523CA7640009FA1A4 /* Path.swift */,
 				5DDF8C9623D4C37800CD64C6 /* Entity.swift */,

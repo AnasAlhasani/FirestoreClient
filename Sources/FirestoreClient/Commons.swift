@@ -7,12 +7,11 @@
 //
 
 import Foundation
-import Promises
 
 // MARK: - Typealias
 
-public typealias Promise<T> = Promises.Promise<T>
 public typealias Result<T> = Swift.Result<T, Error>
+public typealias ResultHandler<T> = (Result<T>) -> Void
 public typealias JSONDictionary = [String: Any]
 public typealias JSONArray = [JSONDictionary]
 public typealias Query = Entity & QueryKey
@@ -59,6 +58,14 @@ func makeResult<T, E: Error>(_ value: T?, _ error: E?) -> Result<T> {
         return .failure(error)
     default:
         return .failure(CoreError.invalidInputCombination)
+    }
+}
+
+func makeResult<E: Error>(_ error: E?) -> Result<Void> {
+    if let error = error {
+        return .failure(error)
+    } else {
+        return .success(())
     }
 }
 

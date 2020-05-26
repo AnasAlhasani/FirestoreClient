@@ -9,8 +9,8 @@
 import Foundation
 import FirebaseFirestore
 
-public final class DefaultRepository<V>: AbstractRepository where V: Query {
-    public typealias Value = V
+public final class DefaultRepository<E>: AbstractRepository where E: Entity {
+    public typealias Entity = E
     
     public let path: Path
     
