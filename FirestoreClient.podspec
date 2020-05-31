@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.static_framework = true
   s.source_files = 'Sources/FirestoreClient'
   s.frameworks   = 'Foundation'
-  s.dependency     'Firebase/Core'
   s.dependency     'Firebase/Firestore'
   s.dependency     'FirebaseFirestoreSwift'
 end
