@@ -3,7 +3,8 @@
 <p align="justify">
     <img src="https://app.bitrise.io/app/e3bc37ec74219dc7/status.svg?token=QIzG7rPS8Vd1F2Bc8uDScw&branch=master" />
     <img src="https://img.shields.io/badge/Swift-5.1-orange.svg" />
-    <img src="https://img.shields.io/badge/Platforms-iOS-blue.svg?style=flat" />
+    <img src="https://img.shields.io/badge/Platforms-iOS%20|%20macOS%20|%20tvOS-blue.svg?style=flat" />
+    <img src="https://img.shields.io/badge/support-iOS%2011%2B%20|%20macOS%2010.12+%20|%20tvOS%2010%2B%20-red.svg?style=flat" />
     <a href="https://cocoapods.org/pods/FirestoreClient">
         <img alt="Cocoapods" src="https://img.shields.io/cocoapods/v/FirestoreClient">
     </a>
