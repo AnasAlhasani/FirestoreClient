@@ -13,7 +13,7 @@ platform :ios do
     clear_derived_data
     cocoapods(try_repo_update_on_error: true)
     ENV["FASTLANE_XCODE_LIST_TIMEOUT"] = "120"
-    scan(clean: true, code_coverage: true)
+    scan(scheme: "FirestoreClient", clean: true, code_coverage: true)
   end
 
   desc "Release a new version with a patch bump_type"
